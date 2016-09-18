@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">SimpleTextReplacer</string>
+  <string name="replace_button_text">Replace</string>
+  <string name="find_field_description">The field for search text</string>
+</resources>
