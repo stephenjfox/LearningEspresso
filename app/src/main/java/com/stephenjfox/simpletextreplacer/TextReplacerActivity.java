@@ -20,8 +20,8 @@ public class TextReplacerActivity extends AppCompatActivity {
    * @param view throw away
    */
   public void replaceText(final View view) {
-    final LabelTextField findField = (LabelTextField) findViewById(R.id.find_text_field);
-    final LabelTextField replaceField = (LabelTextField) findViewById(R.id.replace_text_field);
+    final LabeledEditText findField = (LabeledEditText) findViewById(R.id.find_text_field);
+    final LabeledEditText replaceField = (LabeledEditText) findViewById(R.id.replace_text_field);
 
     // get our labels' search criteria
     final String findFieldText = findField.getText();

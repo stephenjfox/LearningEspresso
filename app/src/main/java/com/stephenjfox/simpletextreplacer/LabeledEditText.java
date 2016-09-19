@@ -11,16 +11,16 @@ import android.widget.TextView;
 /**
  * Created by Stephen on 9/18/2016.
  */
-public class LabelTextField extends RelativeLayout {
+public class LabeledEditText extends RelativeLayout {
 
   private TextView mLabelText;
   private EditText mEditText;
 
-  public LabelTextField(final Context context, final AttributeSet attributeSet) {
+  public LabeledEditText(final Context context, final AttributeSet attributeSet) {
     this(context, attributeSet, 0);
   }
 
-  public LabelTextField(final Context context, final AttributeSet attrs, final int defStyleAttr) {
+  public LabeledEditText(final Context context, final AttributeSet attrs, final int defStyleAttr) {
     super(context, attrs, defStyleAttr);
     initControlProperties(context);
     applyAttributeSet(attrs);
@@ -30,7 +30,7 @@ public class LabelTextField extends RelativeLayout {
     final LayoutInflater inflater = (LayoutInflater)
         context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-    inflater.inflate(R.layout.label_text_field, this);
+    inflater.inflate(R.layout.labeled_edit_text, this);
 
     mLabelText = (TextView) findViewById(R.id.label_text);
     mEditText = (EditText) findViewById(R.id.text_field);
@@ -38,7 +38,7 @@ public class LabelTextField extends RelativeLayout {
 
   private void applyAttributeSet(final AttributeSet attributesEt) {
     final TypedArray typedArray = getContext()
-        .obtainStyledAttributes(attributesEt, R.styleable.LabelTextField);
+        .obtainStyledAttributes(attributesEt, R.styleable.LabeledEditText);
 
     String labelString = null;
 
@@ -46,7 +46,7 @@ public class LabelTextField extends RelativeLayout {
     for (int i = 0; i < typedArray.getIndexCount(); i++) {
       int attribute = typedArray.getIndex(i); // specially indexed attribute
 
-      if (attribute == R.styleable.LabelTextField_label) {
+      if (attribute == R.styleable.LabeledEditText_label) {
         labelString = typedArray.getString(attribute);
       }
     }

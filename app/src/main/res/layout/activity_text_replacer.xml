@@ -23,16 +23,17 @@
       android:layout_height="wrap_content"
       android:layout_below="@id/main_edit_text">
 
-    <com.stephenjfox.simpletextreplacer.LabelTextField
+    <com.stephenjfox.simpletextreplacer.LabeledEditText
         android:id="@+id/find_text_field"
         app:label="Find"
         android:contentDescription="@string/find_field_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"/>
-    <com.stephenjfox.simpletextreplacer.LabelTextField
+    <com.stephenjfox.simpletextreplacer.LabeledEditText
         android:id="@+id/replace_text_field"
         app:label="Replace"
+        android:contentDescription="@string/replace_field_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"/>
