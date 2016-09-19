@@ -9,6 +9,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
+ * Custom Component: an {@link EditText} with an associated label (defined as a {@link TextView})
+ *
  * Created by Stephen on 9/18/2016.
  */
 public class LabeledEditText extends RelativeLayout {
@@ -26,6 +28,11 @@ public class LabeledEditText extends RelativeLayout {
     applyAttributeSet(attrs);
   }
 
+  /**
+   * Bind the inner-elements of this compenent
+   *
+   * @param context to acquire a {@link LayoutInflater} from
+   */
   private void initControlProperties(final Context context) {
     final LayoutInflater inflater = (LayoutInflater)
         context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -36,9 +43,14 @@ public class LabeledEditText extends RelativeLayout {
     mEditText = (EditText) findViewById(R.id.text_field);
   }
 
-  private void applyAttributeSet(final AttributeSet attributesEt) {
+  /**
+   * Iterate through the attributes this component is initialized with
+   *
+   * @param attributeSet bundle of attributes defined on our XML inflation
+   */
+  private void applyAttributeSet(final AttributeSet attributeSet) {
     final TypedArray typedArray = getContext()
-        .obtainStyledAttributes(attributesEt, R.styleable.LabeledEditText);
+        .obtainStyledAttributes(attributeSet, R.styleable.LabeledEditText);
 
     String labelString = null;
 
@@ -51,6 +63,7 @@ public class LabeledEditText extends RelativeLayout {
       }
     }
 
+    // sane defaults
     if (labelString == null) labelString = "Input text";
 
     mLabelText.setText(labelString);

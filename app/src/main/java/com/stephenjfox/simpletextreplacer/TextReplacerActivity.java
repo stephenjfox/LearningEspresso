@@ -6,7 +6,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * Simple main activity for an application to replace all occurrences of text found in a selection.
+ * A tool should do one thing, and do that one thing well.
+ * When I want a global "find-and-replace", I can answer "there's an app for that"
+ */
 public class TextReplacerActivity extends AppCompatActivity {
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
