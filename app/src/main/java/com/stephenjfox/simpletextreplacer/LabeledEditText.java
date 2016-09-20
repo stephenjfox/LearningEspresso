@@ -19,17 +19,13 @@ public class LabeledEditText extends RelativeLayout {
   private EditText mEditText;
 
   public LabeledEditText(final Context context, final AttributeSet attributeSet) {
-    this(context, attributeSet, 0);
-  }
-
-  public LabeledEditText(final Context context, final AttributeSet attrs, final int defStyleAttr) {
-    super(context, attrs, defStyleAttr);
+    super(context, attributeSet);
     initControlProperties(context);
-    applyAttributeSet(attrs);
+    applyAttributeSet(attributeSet);
   }
 
   /**
-   * Bind the inner-elements of this compenent
+   * Bind the inner-elements of this component
    *
    * @param context to acquire a {@link LayoutInflater} from
    */
@@ -52,16 +48,7 @@ public class LabeledEditText extends RelativeLayout {
     final TypedArray typedArray = getContext()
         .obtainStyledAttributes(attributeSet, R.styleable.LabeledEditText);
 
-    String labelString = null;
-
-    // assign our properties
-    for (int i = 0; i < typedArray.getIndexCount(); i++) {
-      int attribute = typedArray.getIndex(i); // specially indexed attribute
-
-      if (attribute == R.styleable.LabeledEditText_label) {
-        labelString = typedArray.getString(attribute);
-      }
-    }
+    String labelString = typedArray.getString(R.styleable.LabeledEditText_label);
 
     // sane defaults
     if (labelString == null) labelString = "Input text";
